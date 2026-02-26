@@ -1,9 +1,0 @@
-n = float(input("Digite la cantidad de notas a promediar: "))
-suma = 0
-i = 1
-while i <= n:
-    nota = float(input("Digite la nota " + str(i) + ": "))
-    suma = suma + nota
-    i = i + 1
-promedio = suma / n
-print("El promedio de las notas es: " + str(promedio)) 
