@@ -1,71 +1,87 @@
-📘 Calculadora de Promedio de Notas
-📌 Descripción
+# 📊 Calculadora de Promedio de Notas en Python
 
-Este programa en Python permite calcular el promedio de un conjunto de notas ingresadas por el usuario desde la consola.
+## 📌 Descripción
 
-El usuario primero indica cuántas notas desea promediar y luego ingresa cada una de ellas. Finalmente, el sistema muestra el promedio calculado.
+Este programa en Python permite calcular el promedio de varias notas ingresadas por el usuario desde la consola.
 
-🚀 Funcionamiento
+El usuario indica cuántas notas desea promediar, luego ingresa cada nota individualmente y el sistema muestra el promedio final.
 
-El programa solicita cuántas notas se van a ingresar.
+---
 
-Se ingresan las notas una por una.
+## 🧠 ¿Cómo funciona?
 
-El sistema suma todas las notas.
+1. Solicita la cantidad de notas a promediar.
+2. Usa un ciclo `while` para pedir cada nota.
+3. Acumula las notas en una variable.
+4. Calcula el promedio.
+5. Muestra el resultado en pantalla.
 
-Calcula el promedio.
+---
 
-Muestra el resultado en pantalla.
+## 💻 Código Fuente
 
-🧮 Código del Programa
+```python
 n = float(input("Digite las notas a promediar: "))
 suma = 0
 i = 1
+
 while i <= n:
     nota = float(input("Ingrese la nota: "))
     suma += nota
     i += 1
+
 promedio = suma / n
 print("El promedio de las notas es:", promedio)
-▶️ Cómo Ejecutarlo
+```
 
-Asegúrate de tener instalado Python 3.
+---
 
-Guarda el archivo como:
+## ▶️ Cómo Ejecutarlo
 
+1. Guarda el archivo como:
+
+```
 promedio.py
+```
 
-Ejecuta el programa en la terminal:
+2. Ejecuta en la terminal:
 
+```bash
 python promedio.py
+```
 
-o
+---
 
-python3 promedio.py
-📋 Ejemplo de Uso
+## 📝 Ejemplo de Uso
+
+```
 Digite las notas a promediar: 3
 Ingrese la nota: 4.5
 Ingrese la nota: 3.8
 Ingrese la nota: 4.2
 El promedio de las notas es: 4.166666666666667
-⚠️ Consideraciones
+```
 
-El programa no valida si el número de notas es cero.
+---
 
-Se recomienda ingresar un número entero para la cantidad de notas.
+## ⚠️ Consideraciones
 
-Todas las notas deben ser valores numéricos.
+- Se recomienda ingresar un número entero para la cantidad de notas.
+- El programa no valida errores (por ejemplo, división entre cero).
+- Todas las notas deben ser valores numéricos.
 
-📦 Requisitos
+---
 
-Python 3.x
+## 🚀 Posibles Mejoras
 
-Si quieres, puedo mejorarlo agregándole:
+- Agregar validación de datos.
+- Manejar errores con `try/except`.
+- Redondear el promedio a 2 decimales.
+- Mejorar la experiencia del usuario.
 
-✔ Validación de errores
+---
 
-✔ Manejo de excepciones
+## 👨‍💻 Autor
 
-✔ Versión más optimizada
-
-✔ Interfaz gráfica
+Tu Nombre  
+Proyecto de práctica en Python.
