@@ -83,5 +83,5 @@ El promedio de las notas es: 4.166666666666667
 
 ## 👨‍💻 Autor
 
-Tu Nombre  
-Proyecto de práctica en Python.
+Luis Guerrero  
+Calculadora_de_Notas.py
