@@ -13,13 +13,17 @@ def productos_a_comprar():
         productos_comprados.append(producto)
         precios_unitarios.append(precio_unitario)
         cantidades.append(cantidad_del_producto)
-        
-        otro_producto = str(input("¿Desea agregar otro producto? (si/no): ")).lower()
-        
-        if otro_producto == "no":
-            break
-        elif otro_producto != "si":
-            print("Respuesta no válida, intente nuevamente")
+        while True:
+            try:
+                otro_producto = str(input("¿Desea agregar otro producto? (si/no): ")).lower()
+                if otro_producto == "no":
+                    return 
+                elif otro_producto == "si":
+                    break 
+                else:
+                    print("Respuesta no válida, intente nuevamente")
+            except:
+                print("Error en la entrada, intente nuevamente")
 
 productos_a_comprar()
 membresia = str(input("¿El cliente tiene membresía? (si/no): ")).lower()
