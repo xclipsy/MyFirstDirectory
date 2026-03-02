@@ -26,10 +26,7 @@ membresia = str(input("¿El cliente tiene membresía? (si/no): ")).lower()
 
 subtotal = sum(precios_unitarios[i] * cantidades[i] for i in range(len(productos_comprados)))
 iva = subtotal * 0.16
-if membresia == "si":
-    descuento = subtotal * 0.10
-else:
-    descuento = 0
+descuento = subtotal * 0.10 if membresia == "si" else 0
 
 total = subtotal + iva - descuento
 
