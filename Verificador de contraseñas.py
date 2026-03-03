@@ -12,7 +12,6 @@ def verificar_datos(correo,passw):
     elif "." in correo and "@" in correo:
         return True
 
-
     numeros = 0
     mayusculas = 0
     especiales = 0
@@ -32,4 +31,4 @@ def verificar_datos(correo,passw):
 if verificar_datos (correo,passw):
     print("El correo y la contraseña son validos")
 else:
-    print("El correo o la contraseña son invalidos")
+    print("El correo o la contraseña son invalidos") 
