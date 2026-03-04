@@ -1,4 +1,4 @@
-print("¡Bienvenido al sistema de Parqueadero!")
+print("Bienvenido al sistema de Parqueadero")
 capacidad_parqueadero = 10
 activador = 0
 
