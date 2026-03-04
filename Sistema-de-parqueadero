@@ -1,4 +1,4 @@
-print("Bienvenido al sistema de Parqueadero")
+print("¡Bienvenido al sistema de Parqueadero!")
 capacidad_parqueadero = 10
 activador = 0
 
@@ -19,7 +19,7 @@ while activador == 0:
             print("No hay vehículos para sacar")
     else:
         print("Opción no válida, intente nuevamente")
-    
+
     continuar = str(input("¿Desea realizar otra operación? (si/no): ")).lower()
     if continuar == "no":
         print("Gracias por usar el sistema de parqueadero")
