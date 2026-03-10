@@ -1,31 +1,41 @@
-# ⚽ Junior Stats Analyzer (Yuyu Stats)
+# 🦈 Estadísticas del Yuyu (Junior Edition)
 
-Este proyecto es una herramienta de analítica deportiva desarrollada en Python para gestionar las estadísticas del **Junior de Barranquilla**. Permite a los usuarios calcular puntos, rendimiento y diferencia de goles de forma automatizada.
-
----
-
-## 🏗️ Business Model Canvas (Estructura del Proyecto)
-
-A continuación se detalla la estrategia y el valor del software bajo el modelo Canvas:
-
-| **Asociaciones Clave** | **Actividades Clave** | **Propuesta de Valor** | **Relación con Clientes** | **Segmentos de Cliente** |
-|:---|:---|:---|:---|:---|
-| • Comunidades de hinchas<br>• Desarrolladores Open Source<br>• Plataformas de datos deportivos | • Refactorización de código<br>• Soporte de lógica de puntos<br>• Mejora de UX en consola | • Automatización de estadísticas<br>• Cálculo preciso de DG (Dif. Goles)<br>• Herramienta ligera y rápida | • Soporte vía GitHub Issues<br>• Transparencia de código<br>• Feedback comunitario | • Hinchas del Junior<br>• Periodistas deportivos locales<br>• Estudiantes de Python |
-| **Recursos Clave** | | **Canales** | | |
-| • Algoritmo de puntos<br>• Intérprete de Python<br>• Repositorio en GitHub | | • Repositorio GitHub<br>• Terminal de comandos<br>• Foros de Junioristas | | |
-| **Estructura de Costes** | | **Fuentes de Ingresos** | | |
-| • Tiempo de desarrollo (I+D)<br>• Mantenimiento de lógica | | • Donaciones (Sponsors)<br>• Versiones personalizadas<br>• Consultoría técnica | | |
+Sencillo script en **Python** para gestionar y visualizar el rendimiento del "Tiburón". Este programa permite calcular puntos y balance de goles basándose en los resultados de los partidos ingresados.
 
 ---
 
-## 🛠️ Instalación y Uso
+## 💻 Entrada de Datos
+El sistema interactúa con el usuario de la siguiente manera:
+1. **Cantidad de partidos:** Introduce el número total de encuentros a evaluar.
+2. **Registro por partido:** Por cada partido, el sistema te pedirá ingresar:
+   * ⚽ **Goles a favor (GF)**
+   * ⚽ **Goles en contra (GC)**
 
-1. **Requisitos:** Tener instalado [Python 3.x](https://www.python.org/).
-2. **Ejecución:** ```bash
-   python junior_stats.py
+## 📊 Resultados
+Al finalizar el ciclo de ingresos, el programa imprimirá automáticamente un resumen con:
+* El total de **puntos** obtenidos.
+* El total de **goles a favor**.
+* El total de **goles en contra**.
+* La **diferencia de goles** final.
 
-   Flujo de datos: - Ingresa el número de partidos.
+---
 
-    Digita los goles de cada encuentro.
+## 📈 Lógica de Cálculo
+El programa utiliza una estructura de control `if-elif` para determinar el resultado de cada encuentro y asignar el puntaje correspondiente:
 
-    Obtén el resumen total de puntos y goles.
+> [!IMPORTANT]
+> * **Victoria:** $gf > gc$ (Suma 3 puntos)
+> * **Empate:** $gf == gc$ (Suma 1 punto)
+> * **Derrota:** $gf < gc$ (Suma 0 puntos)
+
+La fórmula utilizada para el balance es:
+$$DG = GF - GC$$
+
+---
+
+## ⚙️ Requisitos
+* **Lenguaje:** Python 3.x
+* **Pasión:** Un corazón rojiblanco 🔴⚪
+
+---
+*Desarrollado para el análisis rápido de jornadas deportivas.*
