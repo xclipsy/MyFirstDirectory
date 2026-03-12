@@ -1,133 +1,138 @@
-# 🧾 Calculadora de Costo de Producto (Python)
+# 📊 Calculadora de Promedio de Notas (Python)
 
-Este programa en **Python** permite ingresar información de un producto y calcular su costo total.
-El sistema valida que la **cantidad** y el **precio** ingresados sean valores numéricos válidos antes de realizar el cálculo.
-
----
-
-## 📌 Características
-
-* Solicita al usuario:
-
-  * Nombre del producto
-  * Cantidad del producto
-  * Precio del producto
-* Valida que:
-
-  * La **cantidad** sea un número entero positivo.
-  * El **precio** sea un número positivo (permite decimales).
-* Calcula automáticamente el **costo total**.
-* Muestra un resumen con la información ingresada.
+Este programa en **Python** permite calcular el **promedio de varias notas ingresadas por el usuario**.
+Primero se solicita la cantidad de notas que se desean promediar y luego se ingresan una por una para finalmente calcular el promedio.
 
 ---
 
-## ⚙️ Funcionamiento del Programa
+# 📁 Archivos del Proyecto
 
-1. El programa solicita el **nombre del producto**.
-2. Luego pide la **cantidad**, validando que sea un número entero positivo.
-3. Después solicita el **precio**, permitiendo números decimales positivos.
-4. Cuando los datos son válidos, calcula:
+El proyecto requiere únicamente los siguientes archivos:
 
 ```
-costo_total = cantidad_producto * precios_producto
+📦 promedio-notas
+ ┣ 📜 main.py
+ ┗ 📜 README.md
 ```
 
-5. Finalmente muestra la información del producto y el total.
+### Descripción
+
+| Archivo     | Descripción                                               |
+| ----------- | --------------------------------------------------------- |
+| `main.py`   | Contiene el programa que calcula el promedio de las notas |
+| `README.md` | Documentación del proyecto                                |
 
 ---
 
-## 🛡️ Validaciones Implementadas
+# ⚙️ Requisitos
 
-### Validación de Cantidad
+Para ejecutar este programa necesitas:
 
-Se usa `.isdigit()` para asegurar que el valor ingresado sea un número entero positivo.
+* **Python 3.8 o superior**
+* Una terminal o consola
+* Un editor de código opcional (Visual Studio Code, PyCharm, etc.)
+
+Puedes verificar tu versión de Python con:
+
+```bash
+python --version
+```
+
+o
+
+```bash
+python3 --version
+```
+
+---
+
+# ▶️ Cómo Ejecutar el Programa
+
+1. Descarga o clona el repositorio.
+
+```bash
+git clone https://github.com/tu-usuario/promedio-notas.git
+```
+
+2. Entra en la carpeta del proyecto.
+
+```bash
+cd promedio-notas
+```
+
+3. Ejecuta el programa.
+
+```bash
+python main.py
+```
+
+---
+
+# 📌 Funcionamiento del Programa
+
+El programa sigue estos pasos:
+
+1. Solicita al usuario la **cantidad de notas** que desea promediar.
+2. Utiliza un **ciclo `while`** para ingresar cada nota.
+3. Acumula las notas en una variable llamada `suma`.
+4. Calcula el promedio usando la fórmula:
+
+```
+promedio = suma / n
+```
+
+5. Finalmente muestra el resultado en pantalla.
+
+---
+
+# 🔁 Uso del Ciclo `while`
+
+El programa utiliza un ciclo `while` para repetir el ingreso de notas hasta alcanzar la cantidad indicada por el usuario.
 
 ```python
-if cantidad_producto.isdigit() and int(cantidad_producto) > 0:
+while i <= n:
 ```
 
-Esto evita que el usuario ingrese:
-
-* letras
-* números negativos
-* valores vacíos
+Esto permite controlar cuántas notas se ingresan.
 
 ---
 
-### Validación de Precio
+# 💻 Ejemplo de Ejecución
 
-Se utiliza `.replace('.', '', 1)` para permitir **un punto decimal** en el número.
+```
+Digite las notas a promediar: 3
+Ingrese la nota: 4.0
+Ingrese la nota: 3.5
+Ingrese la nota: 5.0
+
+El promedio de las notas es: 4.166666666666667
+```
+
+---
+
+# 📂 Código del Programa
 
 ```python
-if precios_producto.replace('.', '', 1).isdigit() and float(precios_producto) > 0:
-```
+n = float(input("Digite las notas a promediar: "))
+suma = 0
+i = 1
 
-Esto permite valores como:
+while i <= n:
+    nota = float(input("Ingrese la nota: "))
+    suma += nota
+    i += 1
 
-* `10`
-* `10.5`
-* `99.99`
-
-Pero evita valores inválidos como:
-
-* `abc`
-* `12..5`
-* `-10`
-
----
-
-## 💻 Ejemplo de Ejecución
-
-```
-Ingrese el nombre del producto: Manzana
-Ingrese la cantidad del producto: 3
-Ingrese el precio del producto: 2.5
-
-Producto: Manzana | Precio: 2.5 | Cantidad: 3 | Total: 7.5
+promedio = suma / n
+print("El promedio de las notas es:", promedio)
 ```
 
 ---
 
-## 📂 Código del Programa
-
-```python
-nombre_producto = str(input("Ingrese el nombre del producto: "))
-
-verifica_cantidad = True
-verifica_precio = True
-
-while verifica_cantidad:
-
-    cantidad_producto = input("Ingrese la cantidad del producto: ")
-
-    if cantidad_producto.isdigit() and int(cantidad_producto) > 0:
-        cantidad_producto = int(cantidad_producto)
-        verifica_cantidad = False
-    else:
-        print(f"ven aca, cuando has visto tu que una cantidad sea '{cantidad_producto}', colocame un numero entero valido")
-
-
-while verifica_precio:
-
-    precios_producto = input("Ingrese el precio del producto: ")
-
-    if precios_producto.replace('.', '', 1).isdigit() and float(precios_producto) > 0:
-        precios_producto = float(precios_producto)
-        verifica_precio = False
-    else:
-        print(f"ven aca, cuando has visto tu que un precio sea '{precios_producto}', colocame un numero valido")
-
-
-costo_total = cantidad_producto * precios_producto
-
-print(f"Producto: {nombre_producto} | Precio: {precios_producto} | Cantidad: {cantidad_producto} | Total: {costo_total}")
-```
-
----
-
-## 🧠 Autor
+# 🧠 Autor
 
 **Luis José Guerrero Bruges**
+Desarrollador en formación y escritor.
+
 
 
 
