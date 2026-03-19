@@ -1,87 +1,67 @@
-# 📊 Calculadora de Promedio de Notas en Python
+# 🎮 Juego de Trivia en Python (API & CSV)
 
-## 📌 Descripción
+Este es un juego de trivia interactivo desarrollado en Python por consola. El programa extrae preguntas dinámicamente desde un archivo JSON alojado en la web, evalúa las respuestas del jugador en tiempo real y guarda el historial de puntuaciones utilizando manejo de archivos CSV.
 
-Este programa en Python permite calcular el promedio de varias notas ingresadas por el usuario desde la consola.
+## 🚀 Características Principales
 
-El usuario indica cuántas notas desea promediar, luego ingresa cada nota individualmente y el sistema muestra el promedio final.
+* **Consumo de Datos Web:** Utiliza la librería `requests` para obtener un banco de preguntas en formato JSON desde un repositorio remoto.
+* **Preguntas Aleatorias:** Selecciona 5 preguntas al azar en cada partida usando la librería `random`, asegurando que cada juego sea único.
+* **Sistema de Puntuación:** Otorga 20 puntos por cada respuesta correcta (A, B, C o D) y muestra un resumen al finalizar.
+* **Registro de Historial:** Guarda el nombre del jugador, su puntaje y la fecha/hora exacta de la partida en un archivo `top10.csv`.
+* **Lectura de Datos:** Al finalizar, lee el archivo CSV para mostrar el historial de todos los jugadores que han participado.
 
----
+## 📁 Estructura del Proyecto
 
-## 🧠 ¿Cómo funciona?
+📦 trivia-game
+ ┣ 📜 Trivia.py   # Código principal del juego
+ ┣ 📜 top10.csv   # Base de datos local generada automáticamente (Historial)
+ ┗ 📜 README.md   # Documentación del proyecto
 
-1. Solicita la cantidad de notas a promediar.
-2. Usa un ciclo `while` para pedir cada nota.
-3. Acumula las notas en una variable.
-4. Calcula el promedio.
-5. Muestra el resultado en pantalla.
+## ⚙️ Requisitos y Dependencias
 
----
+Este proyecto utiliza librerías nativas de Python (`random`, `csv`, `datetime`), pero requiere instalar la librería externa `requests` para hacer las peticiones HTTP.
 
-## 💻 Código Fuente
-
-```python
-n = float(input("Digite las notas a promediar: "))
-suma = 0
-i = 1
-
-while i <= n:
-    nota = float(input("Ingrese la nota: "))
-    suma += nota
-    i += 1
-
-promedio = suma / n
-print("El promedio de las notas es:", promedio)
-```
-
----
-
-## ▶️ Cómo Ejecutarlo
-
-1. Guarda el archivo como:
-
-```
-promedio.py
-```
-
-2. Ejecuta en la terminal:
-
+Puedes instalarla ejecutando el siguiente comando en tu terminal:
 ```bash
-python promedio.py
+pip install requests
 ```
 
----
+## ▶️ Cómo Jugar
 
-## 📝 Ejemplo de Uso
-
+1. Clona este repositorio o descarga los archivos.
+2. Abre tu terminal y navega hasta la carpeta del proyecto.
+3. Ejecuta el archivo principal:
+```bash
+python Trivia.py
 ```
-Digite las notas a promediar: 3
-Ingrese la nota: 4.5
-Ingrese la nota: 3.8
-Ingrese la nota: 4.2
-El promedio de las notas es: 4.166666666666667
+4. Ingresa tu nombre, lee atentamente la categoría de cada pregunta y selecciona la letra correcta (A, B, C o D). *¡No te preocupes por las mayúsculas o minúsculas, el sistema lo ajusta automáticamente!*
+
+## 💻 Ejemplo de Ejecución
+
+```text
+Ingrese su nombre para empezar: Luis
+Bienvenido a la trivia
+Responde las preguntas de forma correcta para obtener puntos, 
+de ser incorrectas, no sumaran a tu puntaje
+
+Categoria: Historia
+Pregunta: ¿En qué año descubrió Colón América?
+A) 1492
+B) 1512
+C) 1498
+D) 1500
+
+Ingrese su respuesta: a
+La respuesta correcta es: A
+Respuesta correcta
+...
+...
+Su puntaje obtenido fue de: 80, 
+y la cantidad de respuestas correctas fue 4 eres cule malo
+
+El Usuario: Luis Obtuvo: 80 Puntos A la Fecha y Hora: 2026-03-19 17:25:30.123456
 ```
 
----
+## 🧠 Autor
 
-## ⚠️ Consideraciones
-
-- Se recomienda ingresar un número entero para la cantidad de notas.
-- El programa no valida errores (por ejemplo, división entre cero).
-- Todas las notas deben ser valores numéricos.
-
----
-
-## 🚀 Posibles Mejoras
-
-- Agregar validación de datos.
-- Manejar errores con `try/except`.
-- Redondear el promedio a 2 decimales.
-- Mejorar la experiencia del usuario.
-
----
-
-## 👨‍💻 Autor
-
-Luis Guerrero  
-Calculadora_de_Notas.py
+**Luis Guerrero**
