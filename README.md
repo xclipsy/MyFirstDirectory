@@ -11,12 +11,12 @@ Este es un juego de trivia interactivo desarrollado en Python por consola. El pr
 * **Lectura de Datos:** Al finalizar, lee el archivo CSV para mostrar el historial de todos los jugadores que han participado.
 
 ## 📁 Estructura del Proyecto
-
+```text
 📦 trivia-game
  ┣ 📜 Trivia.py   # Código principal del juego
  ┣ 📜 top10.csv   # Base de datos local generada automáticamente (Historial)
  ┗ 📜 README.md   # Documentación del proyecto
-
+```
 ## ⚙️ Requisitos y Dependencias
 
 Este proyecto utiliza librerías nativas de Python (`random`, `csv`, `datetime`), pero requiere instalar la librería externa `requests` para hacer las peticiones HTTP.
