@@ -1,87 +1,80 @@
-# 📊 Calculadora de Promedio de Notas en Python
+# 🛒 Sistema de Inventario de Supermercado (Python)
 
-## 📌 Descripción
+Este programa interactivo en **Python** permite gestionar el inventario de un supermercado mediante un menú de opciones. El sistema permite registrar múltiples productos, validando que las cantidades y precios ingresados sean valores numéricos correctos, guardando todo en una estructura de lista con diccionarios.
 
-Este programa en Python permite calcular el promedio de varias notas ingresadas por el usuario desde la consola.
+## 📁 Archivos del Proyecto
 
-El usuario indica cuántas notas desea promediar, luego ingresa cada nota individualmente y el sistema muestra el promedio final.
+El proyecto solo necesita un archivo principal:
 
----
+📦 inventario-supermercado
+ ┣ 📜 main.py
+ ┗ 📜 README.md
 
-## 🧠 ¿Cómo funciona?
+| Archivo | Descripción |
+| :--- | :--- |
+| `main.py` | Contiene el código principal y la lógica del menú interactivo |
+| `README.md` | Documentación del proyecto |
 
-1. Solicita la cantidad de notas a promediar.
-2. Usa un ciclo `while` para pedir cada nota.
-3. Acumula las notas en una variable.
-4. Calcula el promedio.
-5. Muestra el resultado en pantalla.
+## ⚙️ Requisitos
 
----
+Para ejecutar este programa necesitas:
+* Python 3.12 o superior (requerido para el formateo f-string avanzado)
+* Un intérprete de Python instalado en el sistema
+* Terminal o consola para ejecutar el programa
 
-## 💻 Código Fuente
+Puedes verificar tu versión de Python en la consola con:
+`python --version` o `python3 --version`
 
-```python
-n = float(input("Digite las notas a promediar: "))
-suma = 0
-i = 1
+## ▶️ Cómo Ejecutar el Programa
 
-while i <= n:
-    nota = float(input("Ingrese la nota: "))
-    suma += nota
-    i += 1
+1. Descarga o clona el repositorio.
+`git clone https://github.com/tu-usuario/inventario-supermercado.git`
 
-promedio = suma / n
-print("El promedio de las notas es:", promedio)
+2. Entra en la carpeta del proyecto.
+`cd inventario-supermercado`
+
+3. Ejecuta el archivo principal.
+`python main.py`
+
+## 📌 Características
+
+El programa despliega un menú interactivo con las siguientes opciones:
+1. **Agregar un producto:** Permite registrar nombre, cantidad y precio, almacenándolos como un diccionario. Pregunta si se desea añadir otro producto sin salir de la opción.
+2. **Mostrar inventario:** Recorre la lista de productos y los muestra con un formato claro. Detecta si el inventario está vacío.
+3. **Calcular estadísticas:** Calcula y muestra el valor total acumulado del inventario y la cantidad de tipos de productos registrados.
+4. **Salir:** Finaliza la ejecución del bucle principal.
+
+*Nota:* El programa incluye mensajes de error personalizados para guiar al usuario cuando ingresa datos erróneos.
+
+## 🛡️ Validaciones Implementadas
+
+### Validación de Cantidad (Números Enteros)
+Se usa `.isdigit()` para asegurar que el valor ingresado sea un número entero y mayor a 0.
+
+### Validación de Precio (Números Decimales)
+Se usa `.replace('.', '', 1).isdigit()` para permitir números de punto flotante válidos y mayores a 0.
+
+*Ambas validaciones evitan que el programa colapse si el usuario ingresa letras, valores vacíos o números negativos.*
+
+## 💻 Ejemplo de Ejecución
+
+```text
+Bienvenido al Inventario del supermercado :)
+Menu de opciones
+1. Agregar un producto
+2. Mostrar inventario
+3. Calcular estadisticas
+4. Salir
+¿Que opcion le gustaria hacer?: 1
+
+Ingrese el nombre del producto: Arepa
+Ingrese la cantidad del producto: diez
+ven aca, cuando has visto tu que una cantidad sea 'diez', colocame un numero entero valido
+Ingrese la cantidad del producto: 10
+Ingrese el precio del producto: 2.50
+¿Desea agregar otro producto? (si/no): no
 ```
-
----
-
-## ▶️ Cómo Ejecutarlo
-
-1. Guarda el archivo como:
-
-```
-promedio.py
-```
-
-2. Ejecuta en la terminal:
-
-```bash
-python promedio.py
-```
-
----
-
-## 📝 Ejemplo de Uso
-
-```
-Digite las notas a promediar: 3
-Ingrese la nota: 4.5
-Ingrese la nota: 3.8
-Ingrese la nota: 4.2
-El promedio de las notas es: 4.166666666666667
-```
-
----
-
-## ⚠️ Consideraciones
-
-- Se recomienda ingresar un número entero para la cantidad de notas.
-- El programa no valida errores (por ejemplo, división entre cero).
-- Todas las notas deben ser valores numéricos.
-
----
-
-## 🚀 Posibles Mejoras
-
-- Agregar validación de datos.
-- Manejar errores con `try/except`.
-- Redondear el promedio a 2 decimales.
-- Mejorar la experiencia del usuario.
-
----
-
 ## 👨‍💻 Autor
 
 Luis Guerrero  
-Calculadora_de_Notas.py
+Inventory.py
