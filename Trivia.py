@@ -2,7 +2,9 @@ import requests
 import random
 import csv
 from datetime import datetime
+import os
 
+archivo= os.path.isfile('top10.csv')
 request = requests.get('https://raw.githubusercontent.com/andres-barros-riwi/trivia-python/refs/heads/main/data.json')
 data = request.json()
 nombre = input('Ingrese su nombre para empezar: ')
@@ -33,13 +35,15 @@ for i in range(cantidad):
 
 print(f'Su puntaje obtenido fue de: {score}, \n y la cantidad de respuestas correctas fue {contador_correctas} eres cule malo')
 
-with open('top10.csv', 'a', newline="") as alochino:
+with open('top10.csv', 'a+', newline="") as alochino:
     writer = csv.writer(alochino)
-    writer.writerow(["Nombre", "Punt", "Fecha_y_Hora"])
+
+    if not archivo:
+        writer.writerow(["Nombre", "Puntos", "Fecha_y_Hora"])
     writer.writerow([nombre, score, fecha_y_hora])
 
 with open('top10.csv', 'r') as alochino:
     chocoplo = csv.DictReader(alochino)
 
     for i in chocoplo:
-        print(f"{i['Nombre']} tiene {i['Punt']} y fue a la hora de {i["Fecha_y_Hora"]}")
+        print(f"{i['Nombre']} tiene {i['Puntos']} y fue a la hora de {i["Fecha_y_Hora"]}")
