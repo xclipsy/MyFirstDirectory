@@ -1,67 +1,45 @@
-# 🎮 Juego de Trivia en Python (API & CSV)
+import requests
+import random
+import csv
+from datetime import datetime
 
-Este es un juego de trivia interactivo desarrollado en Python por consola. El programa extrae preguntas dinámicamente desde un archivo JSON alojado en la web, evalúa las respuestas del jugador en tiempo real y guarda el historial de puntuaciones utilizando manejo de archivos CSV.
+request = requests.get('https://raw.githubusercontent.com/andres-barros-riwi/trivia-python/refs/heads/main/data.json')
+data = request.json()
+nombre = input('Ingrese su nombre para empezar: ')
+print('Bienvenido a la trivia')
+print('Responde las preguntas de forma correcta para obtener puntos, \n de ser incorrectas, no sumaran a tu puntaje')
+cantidad = 5
+score = 0
+contador_correctas = 0
+fecha_y_hora = datetime.now()
 
-## 🚀 Características Principales
+for i in range(cantidad):
+    p_trivia = random.choice(data)
+    print(f"Categoria: {p_trivia['categoria']}")
+    print(f'Pregunta: {p_trivia['pregunta']}')
+    print(f"A) {p_trivia['opciones']['A']}")
+    print(f"B) {p_trivia['opciones']['B']}")
+    print(f"C) {p_trivia['opciones']['C']}")
+    print(f"D) {p_trivia['opciones']['D']}\n")
+    respuesta = input('Ingrese su respuesta: ').upper()
+    print(f"La respuesta correcta es: {p_trivia['respuesta_correcta']}")
+    intento = p_trivia['respuesta_correcta']
+    if intento == respuesta:
+         print('Respuesta correcta')
+         score += 20
+         contador_correctas += 1
+    else:
+         print('Respuesta incorrecta')
 
-* **Consumo de Datos Web:** Utiliza la librería `requests` para obtener un banco de preguntas en formato JSON desde un repositorio remoto.
-* **Preguntas Aleatorias:** Selecciona 5 preguntas al azar en cada partida usando la librería `random`, asegurando que cada juego sea único.
-* **Sistema de Puntuación:** Otorga 20 puntos por cada respuesta correcta (A, B, C o D) y muestra un resumen al finalizar.
-* **Registro de Historial:** Guarda el nombre del jugador, su puntaje y la fecha/hora exacta de la partida en un archivo `top10.csv`.
-* **Lectura de Datos:** Al finalizar, lee el archivo CSV para mostrar el historial de todos los jugadores que han participado.
+print(f'Su puntaje obtenido fue de: {score}, \n y la cantidad de respuestas correctas fue {contador_correctas} eres cule malo')
 
-## 📁 Estructura del Proyecto
+with open('top10.csv', 'a', newline="") as alochino:
+    writer = csv.writer(alochino)
+    writer.writerow(["Nombre", "Punt", "Fecha_y_Hora"])
+    writer.writerow([nombre, score, fecha_y_hora])
 
-📦 trivia-game
- ┣ 📜 Trivia.py   # Código principal del juego
- ┣ 📜 top10.csv   # Base de datos local generada automáticamente (Historial)
- ┗ 📜 README.md   # Documentación del proyecto
+with open('top10.csv', 'r') as alochino:
+    chocoplo = csv.DictReader(alochino)
 
-## ⚙️ Requisitos y Dependencias
-
-Este proyecto utiliza librerías nativas de Python (`random`, `csv`, `datetime`), pero requiere instalar la librería externa `requests` para hacer las peticiones HTTP.
-
-Puedes instalarla ejecutando el siguiente comando en tu terminal:
-```bash
-pip install requests
-```
-
-## ▶️ Cómo Jugar
-
-1. Clona este repositorio o descarga los archivos.
-2. Abre tu terminal y navega hasta la carpeta del proyecto.
-3. Ejecuta el archivo principal:
-```bash
-python Trivia.py
-```
-4. Ingresa tu nombre, lee atentamente la categoría de cada pregunta y selecciona la letra correcta (A, B, C o D). *¡No te preocupes por las mayúsculas o minúsculas, el sistema lo ajusta automáticamente!*
-
-## 💻 Ejemplo de Ejecución
-
-```text
-Ingrese su nombre para empezar: Luis
-Bienvenido a la trivia
-Responde las preguntas de forma correcta para obtener puntos, 
-de ser incorrectas, no sumaran a tu puntaje
-
-Categoria: Historia
-Pregunta: ¿En qué año descubrió Colón América?
-A) 1492
-B) 1512
-C) 1498
-D) 1500
-
-Ingrese su respuesta: a
-La respuesta correcta es: A
-Respuesta correcta
-...
-...
-Su puntaje obtenido fue de: 80, 
-y la cantidad de respuestas correctas fue 4 eres cule malo
-
-El Usuario: Luis Obtuvo: 80 Puntos A la Fecha y Hora: 2026-03-19 17:25:30.123456
-```
-
-## 🧠 Autor
-
-**Luis Guerrero**
+    for i in chocoplo:
+        print(f"{i['Nombre']} tiene {i['Punt']} y fue a la hora de {i["Fecha_y_Hora"]}")
