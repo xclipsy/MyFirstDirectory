@@ -1,80 +1,40 @@
-# 🛒 Sistema de Inventario de Supermercado (Python)
+# Sistema de Gestión de Inventario
 
-Este programa interactivo en **Python** permite gestionar el inventario de un supermercado mediante un menú de opciones. El sistema permite registrar múltiples productos, validando que las cantidades y precios ingresados sean valores numéricos correctos, guardando todo en una estructura de lista con diccionarios.
+Una aplicación de consola en Python diseñada para gestionar el inventario de un supermercado. Este sistema permite administrar productos, calcular estadísticas y guardar o cargar la información utilizando archivos CSV para asegurar la persistencia de los datos.
 
-## 📁 Archivos del Proyecto
+## Estructura del Proyecto
 
-El proyecto solo necesita un archivo principal:
+El proyecto está modularizado en tres archivos principales para separar la lógica de negocio, la persistencia de datos y la interfaz de usuario:
 
-📦 inventario-supermercado
- ┣ 📜 main.py
- ┗ 📜 README.md
+* **`app.py`**: Es el punto de entrada de la aplicación. Contiene el bucle principal y el menú interactivo que guía al usuario a través de las diferentes opciones del sistema.
+* **`servicios.py`**: Módulo que maneja la lógica interna. Incluye las funciones para agregar, mostrar, buscar, actualizar y eliminar productos, además de calcular las estadísticas generales del inventario.
+* **`archivos.py`**: Módulo dedicado a la gestión de archivos. Se encarga de guardar el inventario en un archivo `.csv` y de leerlo, manejando excepciones y validando la integridad de los datos ingresados.
 
-| Archivo | Descripción |
-| :--- | :--- |
-| `main.py` | Contiene el código principal y la lógica del menú interactivo |
-| `README.md` | Documentación del proyecto |
+## Características Principales
 
-## ⚙️ Requisitos
+* **Gestión de Productos (CRUD):** Permite registrar nuevos productos, ver la lista completa, buscar elementos específicos por nombre, actualizar precios y eliminar registros.
+* **Validaciones de Entrada:** Asegura que las cantidades y precios ingresados sean números válidos y positivos, evitando que el programa se cierre inesperadamente por errores de tipeo del usuario.
+* **Persistencia de Datos (CSV):** * Guarda el estado actual del inventario de forma segura.
+    * Al cargar un archivo previo, el sistema detecta filas inválidas y ofrece la opción de **sobrescribir** los datos actuales o **fusionarlos** (sumando cantidades y actualizando precios de productos ya existentes).
+* **Estadísticas del Sistema:** Calcula y muestra el valor total del inventario, las unidades totales en stock, el producto más caro y el producto con mayor cantidad almacenada.
+* **Manejo de Errores:** Captura y maneja excepciones (como `FileNotFoundError`, `PermissionError` o `UnicodeDecodeError`) para mantener la aplicación en funcionamiento constante.
 
-Para ejecutar este programa necesitas:
-* Python 3.12 o superior (requerido para el formateo f-string avanzado)
-* Un intérprete de Python instalado en el sistema
-* Terminal o consola para ejecutar el programa
+## Requisitos
 
-Puedes verificar tu versión de Python en la consola con:
-`python --version` o `python3 --version`
+* Python 3.x
+* No se requieren librerías de terceros (utiliza el módulo nativo `csv`).
 
-## ▶️ Cómo Ejecutar el Programa
+## Instalación y Uso
 
-1. Descarga o clona el repositorio.
-`git clone https://github.com/tu-usuario/inventario-supermercado.git`
+1.  Descarga los tres archivos (`app.py`, `servicios.py`, `archivos.py`) y asegúrate de que estén ubicados en la misma carpeta.
+2.  Abre una terminal o línea de comandos en el directorio del proyecto.
+3.  Inicia la aplicación ejecutando el archivo principal:
 
-2. Entra en la carpeta del proyecto.
-`cd inventario-supermercado`
+    ```bash
+    python app.py
+    ```
+4.  Utiliza los números del 1 al 9 para navegar por las opciones del menú en pantalla.
 
-3. Ejecuta el archivo principal.
-`python main.py`
+## Autor
 
-## 📌 Características
-
-El programa despliega un menú interactivo con las siguientes opciones:
-1. **Agregar un producto:** Permite registrar nombre, cantidad y precio, almacenándolos como un diccionario. Pregunta si se desea añadir otro producto sin salir de la opción.
-2. **Mostrar inventario:** Recorre la lista de productos y los muestra con un formato claro. Detecta si el inventario está vacío.
-3. **Calcular estadísticas:** Calcula y muestra el valor total acumulado del inventario y la cantidad de tipos de productos registrados.
-4. **Salir:** Finaliza la ejecución del bucle principal.
-
-*Nota:* El programa incluye mensajes de error personalizados para guiar al usuario cuando ingresa datos erróneos.
-
-## 🛡️ Validaciones Implementadas
-
-### Validación de Cantidad (Números Enteros)
-Se usa `.isdigit()` para asegurar que el valor ingresado sea un número entero y mayor a 0.
-
-### Validación de Precio (Números Decimales)
-Se usa `.replace('.', '', 1).isdigit()` para permitir números de punto flotante válidos y mayores a 0.
-
-*Ambas validaciones evitan que el programa colapse si el usuario ingresa letras, valores vacíos o números negativos.*
-
-## 💻 Ejemplo de Ejecución
-
-```text
-Bienvenido al Inventario del supermercado :)
-Menu de opciones
-1. Agregar un producto
-2. Mostrar inventario
-3. Calcular estadisticas
-4. Salir
-¿Que opcion le gustaria hacer?: 1
-
-Ingrese el nombre del producto: Arepa
-Ingrese la cantidad del producto: diez
-ven aca, cuando has visto tu que una cantidad sea 'diez', colocame un numero entero valido
-Ingrese la cantidad del producto: 10
-Ingrese el precio del producto: 2.50
-¿Desea agregar otro producto? (si/no): no
-```
-## 👨‍💻 Autor
-
-Luis Guerrero  
-Inventory.py
+* Luis José Guerrero Bruges
