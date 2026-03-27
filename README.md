@@ -38,5 +38,3 @@ This script handles the **persistence** of a user's daily blocker by saving it t
 ## 💻 Author
 
 *Luis Guerrero*
-
-** GITHUB REPOSITORY: https://github.com/xclipsy/MyFirstDirectory/tree/Daily-blocker-tracker**
