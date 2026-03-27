@@ -1,140 +1,42 @@
-# 📊 Calculadora de Promedio de Notas (Python)
+# Daily Blocker Tracker
 
-Este programa en **Python** permite calcular el **promedio de varias notas ingresadas por el usuario**.
-Primero se solicita la cantidad de notas que se desean promediar y luego se ingresan una por una para finalmente calcular el promedio.
+A simple Python CLI tool to help developers document and track their daily blockers before they reach out to their team for support. 
 
----
+## 📝 Description
 
-# 📁 Archivos del Proyecto
+This script handles the **persistence** of a user's daily blocker by saving it to a local text file (`database.txt`). Depending on the user's input, it will either safely append the new entry or intentionally **overwrite** the entire database after a confirmation warning. Later, the program can **fetch** the stored blockers to display them, allowing the user to review their documented issues before they **reach out** to their team for help.
 
-El proyecto requiere únicamente los siguientes archivos:
+## ✨ Features
 
-```
-📦 promedio-notas
- ┣ 📜 main.py
- ┗ 📜 README.md
-```
+* **Quick Logging:** Prompts the user to quickly type in their current daily blocker.
+* **Safe Appending:** Default route safely adds new blockers to the end of the file without deleting history.
+* **Hard Reset (Overwrite):** Allows users to wipe the slate clean and overwrite the file, guarded by a yes/no safety warning.
+* **Fetch History:** Includes a `fetch_blocker()` function that reads back all stored blockers if the file is not empty.
 
-### Descripción
+## 🚀 How to Use
 
-| Archivo     | Descripción                                               |
-| ----------- | --------------------------------------------------------- |
-| `main.py`   | Contiene el programa que calcula el promedio de las notas |
-| `README.md` | Documentación del proyecto                                |
+1. **Clone the repository** or download the Python script to your local machine.
+2. **Run the script** via your terminal:
+   ```bash
+   python blocker_tracker.py
+   ```
+   *(Note: Replace `blocker_tracker.py` with whatever you named your file).*
+3. **Follow the prompts:**
+   * Enter your daily blocker.
+   * Choose `a` to append to your running list, or `w` to overwrite it.
+4. **View your blockers:**
+   To see your list of blockers, you can add `fetch_blocker()` to the bottom of your Python script, or import it into another file.
 
----
+## 📂 File Structure
 
-# ⚙️ Requisitos
-
-Para ejecutar este programa necesitas:
-
-* **Python 3.8 o superior**
-* Una terminal o consola
-* Un editor de código opcional (Visual Studio Code, PyCharm, etc.)
-
-Puedes verificar tu versión de Python con:
-
-```bash
-python --version
-```
-
-o
-
-```bash
-python3 --version
-```
+* `[your_script_name].py`: The main script containing the logic.
+* `database.txt`: Automatically generated upon running the script. This is where your blockers are stored. (You may want to add `database.txt` to your `.gitignore` file so you don't accidentally push your personal blockers to a public repository).
 
 ---
+*Created to keep blockers clear, concise, and courteous.*
 
-# ▶️ Cómo Ejecutar el Programa
+## 💻 Author
 
-1. Descarga o clona el repositorio.
+*Luis Guerrero*
 
-```bash
-git clone https://github.com/tu-usuario/promedio-notas.git
-```
-
-2. Entra en la carpeta del proyecto.
-
-```bash
-cd promedio-notas
-```
-
-3. Ejecuta el programa.
-
-```bash
-python main.py
-```
-
----
-
-# 📌 Funcionamiento del Programa
-
-El programa sigue estos pasos:
-
-1. Solicita al usuario la **cantidad de notas** que desea promediar.
-2. Utiliza un **ciclo `while`** para ingresar cada nota.
-3. Acumula las notas en una variable llamada `suma`.
-4. Calcula el promedio usando la fórmula:
-
-```
-promedio = suma / n
-```
-
-5. Finalmente muestra el resultado en pantalla.
-
----
-
-# 🔁 Uso del Ciclo `while`
-
-El programa utiliza un ciclo `while` para repetir el ingreso de notas hasta alcanzar la cantidad indicada por el usuario.
-
-```python
-while i <= n:
-```
-
-Esto permite controlar cuántas notas se ingresan.
-
----
-
-# 💻 Ejemplo de Ejecución
-
-```
-Digite las notas a promediar: 3
-Ingrese la nota: 4.0
-Ingrese la nota: 3.5
-Ingrese la nota: 5.0
-
-El promedio de las notas es: 4.166666666666667
-```
-
----
-
-# 📂 Código del Programa
-
-```python
-n = float(input("Digite las notas a promediar: "))
-suma = 0
-i = 1
-
-while i <= n:
-    nota = float(input("Ingrese la nota: "))
-    suma += nota
-    i += 1
-
-promedio = suma / n
-print("El promedio de las notas es:", promedio)
-```
-
----
-
-# 🧠 Autor
-
-**Luis José Guerrero Bruges**
-Desarrollador en formación y escritor.
-
-
-
-
----
-
+** GITHUB REPOSITORY: https://github.com/xclipsy/MyFirstDirectory/tree/Daily-blocker-tracker**
