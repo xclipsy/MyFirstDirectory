@@ -1,0 +1,193 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header{    
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.178);;
+}
+
+.title-japan{
+    margin: 20px 0 10px 32px;
+    font-weight: 700;
+}
+
+.title-roman{
+    margin:-17px 0px 8px 36px;
+    font-weight: 600;
+}
+
+.icon{
+    font-size: larger;
+    color: #1d1f2a;
+}
+ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.upper_bar{
+    position: sticky;
+    top: 0;
+    overflow:hidden;
+    background-color: #1d1f2a;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.upper_bar a{
+    float: right;
+    display: block;
+    color: #d1cbc1;
+    text-align: center;
+    text-decoration: none;
+    border: solid 2px #70747d;
+    border-radius: 40px;
+    margin-right: 30px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.upper_bar a:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.benefit-card {
+    background-color: #70747d;
+    padding: 30px;
+    border-radius: 12px;
+    width: 30%; 
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    color: #1a1b26;
+}
+
+.benefit-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
+}
+
+.card-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #1a1b26; 
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+}
+
+.icon-fidelidad {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18V5l12-2v13'%3E%3C/path%3E%3Ccircle cx='6' cy='18' r='3'%3E%3C/circle%3E%3Ccircle cx='18' cy='16' r='3'%3E%3C/circle%3E%3C/svg%3E");
+    
+}
+
+.icon-flujo {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+.icon-audifonos {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 18v-6a9 9 0 0 1 18 0v6'%3E%3C/path%3E%3Cpath d='M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.why_hindo {
+    background-color: #d1cbc1;
+    padding: 30px;
+    border-radius: 12px;
+    place-items: center;
+    width: 90%; 
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    color: #1a1b26;
+}
+
+.band_img{
+    width: 100%;
+    border-radius: 30px;
+}
+
+h2, p {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.ver_mas{
+    display: inline-block;
+    background-color: #1d1f2a;
+    color: #d1cbc1;
+    padding: 12px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #323045;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
+    margin-right: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.ver_mas:hover{
+    background-color: #434b5e;
+    color: #d1cbc1;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-card a{
+    text-decoration: none;
+    color: #d1cbc1;
+}
+
+.icon-tracks {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='22 12 18 12 15 21 9 3 6 12 2 12'%3E%3C/polyline%3E%3C/svg%3E");
+    width: 100%;
+}
+
+.icon-whatsapp {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z'%3E%3C/path%3E%3C/svg%3E") ;
+}
+
+.icon-correo{
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'%3E%3C/path%3E%3Cpolyline points='22,6 12,13 2,6'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.icon-discord{
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-image:url("https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png");
+}
+
+.icon-maps{
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-image:url("https://uxwing.com/wp-content/themes/uxwing/download/location-travel-map/location-pointer-white-icon.png") ;
+}
+
+iframe{
+    width: 280px;
+    height: 280px;
+}
