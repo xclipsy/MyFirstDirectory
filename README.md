@@ -1,140 +1,31 @@
-# 📊 Calculadora de Promedio de Notas (Python)
+# 頻度 (Hindo) - Audio Store 🎵
 
-Este programa en **Python** permite calcular el **promedio de varias notas ingresadas por el usuario**.
-Primero se solicita la cantidad de notas que se desean promediar y luego se ingresan una por una para finalmente calcular el promedio.
+**Hindo** (que significa "frecuencia" en japonés) es una landing page minimalista y moderna diseñada para una tienda de pistas de audio de alta fidelidad. Está pensada específicamente para solucionar las necesidades de creadores de contenido, cineastas independientes y podcasters.
 
----
+## 🚀 Características Principales
 
-# 📁 Archivos del Proyecto
+* **Diseño Minimalista y Profesional:** Interfaz limpia que utiliza un alto contraste entre secciones claras y oscuras para guiar la lectura del usuario.
+* **Totalmente Responsivo:** Diseño adaptable a dispositivos móviles y pantallas de escritorio gracias a la implementación de CSS Flexbox.
+* **Rendimiento Optimizado:** Cero dependencias de imágenes externas para la iconografía. Todos los íconos (beneficios y redes sociales) están inyectados directamente en la hoja de estilos utilizando **SVG Data URIs**, garantizando una carga instantánea.
+* **Secciones Integradas:**
+    * **Beneficios (Tarjetas):** Alta Fidelidad, Flujo Rápido y licencias Royalty Free.
+    * **Nuestra Frecuencia (Sobre Nosotros):** Un manifiesto de marca que conecta directamente con el flujo de trabajo del creador moderno.
 
-El proyecto requiere únicamente los siguientes archivos:
+## 🛠️ Tecnologías Utilizadas
 
-```
-📦 promedio-notas
- ┣ 📜 main.py
- ┗ 📜 README.md
-```
+* **HTML5:** Estructura semántica y jerarquía de contenidos.
+* **CSS3:** Estilos, animaciones sutiles (hover), layout dinámico y gráficos vectoriales embebidos.
 
-### Descripción
+## ⚙️ Uso e Instalación
 
-| Archivo     | Descripción                                               |
-| ----------- | --------------------------------------------------------- |
-| `main.py`   | Contiene el programa que calcula el promedio de las notas |
-| `README.md` | Documentación del proyecto                                |
+Este proyecto es estático, por lo que no requiere de la instalación de dependencias ni de un servidor local complejo para funcionar en su etapa inicial.
 
----
+1.  Clona o descarga este repositorio en tu computadora.
+2.  Asegúrate de mantener la estructura básica de archivos:
+    * `index.html` (Contiene la estructura de la página principal).
+    * `style.css` (Contiene todos los estilos y Data URIs).
+3.  Abre el archivo `index.html` en cualquier navegador web moderno (Google Chrome, Firefox, Edge, Safari) para visualizar el proyecto.
 
-# ⚙️ Requisitos
+## 👤 Autor
 
-Para ejecutar este programa necesitas:
-
-* **Python 3.8 o superior**
-* Una terminal o consola
-* Un editor de código opcional (Visual Studio Code, PyCharm, etc.)
-
-Puedes verificar tu versión de Python con:
-
-```bash
-python --version
-```
-
-o
-
-```bash
-python3 --version
-```
-
----
-
-# ▶️ Cómo Ejecutar el Programa
-
-1. Descarga o clona el repositorio.
-
-```bash
-git clone https://github.com/tu-usuario/promedio-notas.git
-```
-
-2. Entra en la carpeta del proyecto.
-
-```bash
-cd promedio-notas
-```
-
-3. Ejecuta el programa.
-
-```bash
-python main.py
-```
-
----
-
-# 📌 Funcionamiento del Programa
-
-El programa sigue estos pasos:
-
-1. Solicita al usuario la **cantidad de notas** que desea promediar.
-2. Utiliza un **ciclo `while`** para ingresar cada nota.
-3. Acumula las notas en una variable llamada `suma`.
-4. Calcula el promedio usando la fórmula:
-
-```
-promedio = suma / n
-```
-
-5. Finalmente muestra el resultado en pantalla.
-
----
-
-# 🔁 Uso del Ciclo `while`
-
-El programa utiliza un ciclo `while` para repetir el ingreso de notas hasta alcanzar la cantidad indicada por el usuario.
-
-```python
-while i <= n:
-```
-
-Esto permite controlar cuántas notas se ingresan.
-
----
-
-# 💻 Ejemplo de Ejecución
-
-```
-Digite las notas a promediar: 3
-Ingrese la nota: 4.0
-Ingrese la nota: 3.5
-Ingrese la nota: 5.0
-
-El promedio de las notas es: 4.166666666666667
-```
-
----
-
-# 📂 Código del Programa
-
-```python
-n = float(input("Digite las notas a promediar: "))
-suma = 0
-i = 1
-
-while i <= n:
-    nota = float(input("Ingrese la nota: "))
-    suma += nota
-    i += 1
-
-promedio = suma / n
-print("El promedio de las notas es:", promedio)
-```
-
----
-
-# 🧠 Autor
-
-**Luis José Guerrero Bruges**
-Desarrollador en formación y escritor.
-
-
-
-
----
-
+Desarrollado por **Luis  Guerrero y Edward Barrios**.
