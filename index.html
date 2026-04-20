@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portafolio</title>
+</head>
+<body>
+    <header>
+        <div>   
+            <h1>¡Hola Soy Luis Guerrero!</h1>
+            <nav>
+                <ul class="secciones">
+                    <li class="activo"><a  href="index.html">Inicio</a></li>
+                    <li><a href="mascotas.html">Mascotas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="who_Im">
+            <img class="img-izquerda" src="img/izquerda.png" alt="Luis Photo Principal">
+            <div class="who_Im_text">
+                <h1>¿Quien Soy?</h1>
+                <p>Soy un joven programador de 22 años dando pasos para ser un desarrollador de software, con la intencion de borrar la barrera entre la imaginacion y el pensar volviendolo lo mas parecido a una realidad, aplicar nuevas tecnologias a ortodoxos sistemas, y darle un significado real a un entorno digital.</p>
+            </div>
+            <img class="img-dereita" src="img/dereita.png" alt="Luis Photo Principal">
+        </div>
+        <h2 class="text_mid">Conoce mis proyectos</h2>
+        <div class="who_Im">
+            <ul class="projects">
+                <li><a class="github"href= "https://github.com/xclipsy/MyFirstDirectory/tree/Trivia-game" target="_blank">Trivia.py <img src="img/github.png" alt="Icono GitHub"></a> </li><br>
+                <li><a class="github"href= "https://github.com/xclipsy/MyFirstDirectory/tree/Inventory-system" target="_blank">Inventory-system.py<img src="img/github.png" alt="Icono GitHub"></a> </li><br>
+                <li><a class="github"href= "https://github.com/xclipsy/MyFirstDirectory/tree/Promedio-Estudiantes" target="_blank">average-grades-students.py<img src="img/github.png" alt="Icono GitHub"></a> </li><br>
+                <li><a class="github"href= "https://github.com/xclipsy/MyFirstDirectory/tree/flights-booking" target="_blank">flights-booking.py<img src="img/github.png" alt="Icono GitHub"></a> </li><br>
+            </ul>
+        </div>
+        <h2 class="text_mid">Contactame</h2>
+        <div class ="who_Im">
+            <div class="contact_me">
+            <form action="mascotas.html" method="get">
+                <div class="container_form">
+                <label class="info">Nombre</label>
+                <input class= "textbox" type="text" name="nombre" placeholder="Ingresa tu nombre"><br>
+                </div>
+                <div class="container_form">
+                <label class="info">Telefono</label>
+                <input class= "textbox" type="number" name="telefono" placeholder="Ingresa tu numero" min="0"><br>
+                </div>
+                <div class="container_form">
+                <label class="info">Correo</label>
+                <input class= "textbox" type="email" name="correo" placeholder="Ingresa tu correo electronico"><br><br>
+                </div>
+                <div class="container_form">
+                <label>Acepto las politicas de tratados de seguridad previamente anunciados en <a class="acuerdo" href="https://static.avianca.com/media/1241/anexo-acuerdo-para-el-tratamiento-de-datos-personales-1.pdf">Acuerdo y tratado de datos</a></label>
+                <input type="checkbox" name="caja">
+                </div>
+                
+                <br>
+                <br>
+                <button>Enviar Formulario</button>
+                <button type="reset">Limpiar datos</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
