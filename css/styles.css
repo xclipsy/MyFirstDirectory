@@ -1,11 +1,42 @@
-body{
+/* ─── Design tokens ──────────────────────────────────────── */
+:root {
+    --font-size-small:       0.875rem;
+    --font-size-base:        1rem;
+    --font-size-medium:      1.25rem;
+    --font-size-large:       1.5rem;
+    --font-size-extra-large: 2rem;
+}
+
+
+/* ─── Base reset ─────────────────────────────────────────── */
+body {
     margin: 0;
     padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                 Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: var(--font-size-base);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-header{
+/* All images are responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* ─── Header ─────────────────────────────────────────────── */
+header {
     margin: 20px;
     background-color: #7f5539;
     padding: 10px;
@@ -16,15 +47,18 @@ header{
     color: white;
 }
 
-.secciones{
+
+/* ─── Navigation ─────────────────────────────────────────── */
+.nav-links {
     display: flex;
     justify-content: center;
     gap: 50px;
     padding: 0;
 }
 
-.secciones li{
+.nav-links li {
     font-weight: 500;
+    font-size: var(--font-size-base);
     background-color: #ddb892;
     border-radius: 30px;
     padding: 15px;
@@ -33,31 +67,34 @@ header{
     transition: all 0.3s ease;
 }
 
-.secciones li.activo {
+/* Highlight the current page link */
+.nav-links li.active {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     border: 2px solid #e6ccb2;
 }
 
-.secciones li:hover{
+.nav-links li:hover {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     border: 2px solid #e6ccb2;
 }
 
-ul{
-    list-style-type: none;    
+
+/* ─── Section titles ─────────────────────────────────────── */
+.section-title {
+    text-align: center;
+    font-size: var(--font-size-large);
+    color: #7f5539;
 }
 
-a{
-    text-decoration: none;
-    color: white;
-}
 
-.who_Im{
+/* ─── Card row (about / projects / contact wrapper) ──────── */
+
+.card-row {
     background-color: #b08968;
     padding: 30px;
     border-radius: 12px;
     place-items: center;
-    width: 90%; 
+    width: 90%;
     box-sizing: border-box;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -68,48 +105,54 @@ a{
     margin-bottom: 20px;
 }
 
-.who_Im_text{
+.card-row__text {
     text-align: center;
 }
 
-.img-dereita{
-    width:22%;
+/* Side portrait images inside the about card */
+.img-left {
+    width: 24%;
 }
 
-.img-izquerda{
-    width:24%;
+.img-right {
+    width: 22%;
 }
 
-.who_Im img{
+.card-row img {
     border-radius: 15px;
     border: 2px solid transparent;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
     transition: all 0.3s ease;
 }
-.who_Im img:hover{
+
+.card-row img:hover {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     border: 2px solid #e6ccb2;
 }
 
+
+/* ─── Projects list ──────────────────────────────────────── */
 .projects {
     display: grid;
     grid-auto-flow: column;
-    gap: 24px; 
+    gap: 24px;
     padding: 0;
     list-style: none;
 }
 
 .projects li {
-    margin: 0; 
+    margin: 0;
 }
 
+/* Each project is a pill-shaped link with a GitHub icon */
 .projects li a {
     display: flex;
     align-items: center;
     font-weight: bold;
+    font-size: var(--font-size-base);
     background-color: #7f5539;
     border-radius: 30px;
-    padding: 15px;  
+    padding: 15px;
     justify-content: space-between;
     border: 2px solid transparent;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
@@ -121,172 +164,192 @@ a{
     border: 2px solid #e6ccb2;
 }
 
-.github img{
+/* GitHub icon inside project links */
+.github-link img {
     width: 70px;
-    margin-left: 20px;
     border: none;
     box-shadow: none;
     transition: none;
+    margin-left: 20px;
 }
 
-.github img:hover{
+.github-link img:hover {
     box-shadow: none;
     border: none;
 }
 
-.projects_section{
-    margin-top: 20px;
+
+/* ─── Contact form ───────────────────────────────────────── */
+
+/* The form is hidden by default; script.js toggles it */
+.contact-form {
+    display: none;
 }
 
-
-.text_mid{
-    text-align: center;
-    color: #7f5539;
-}
-
-.container_form {
-    display:flex;
+/* Each label + input pair */
+.form-field {
+    display: flex;
     align-items: center;
     font-weight: bold;
+    font-size: var(--font-size-base);
     background-color: #7f5539;
     border-radius: 30px;
-    padding: 15px;  
-    justify-content:space-between;
+    padding: 15px;
+    justify-content: space-between;
     border: 2px solid transparent;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
     transition: all 0.3s ease;
     margin-bottom: 20px;
 }
 
-.container_form:hover{
+.form-field:hover {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     border: 2px solid #e6ccb2;
 }
-.textbox{
+
+/* Text / number / email inputs */
+.textbox {
     width: 100%;
     max-width: 380px;
     box-sizing: border-box;
     border-radius: 9px;
     margin: 6px 0 16px 0;
     padding: 12px 14px;
+    font-size: var(--font-size-base);
     border: 2px solid transparent;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-    transition: all 0.3s ease;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     background-color: #e6ccb2;
     color: white;
 }
 
-.textbox::placeholder{
+.textbox::placeholder {
     color: white;
 }
 
-.textbox:hover{
+.textbox:hover {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     border: 2px solid #e6ccb2;
 }
 
-.acuerdo{
+/* Link to the data-privacy policy document */
+.policy-link {
     color: #e6ccb2;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     margin: 20px;
     accent-color: #e6ccb2;
 }
 
-.forms{
-    display: none;
-}
-
-button{
+/* Shared button styles (submit, reset, toggle) */
+button {
     font-family: system-ui;
+    font-size: var(--font-size-base);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    display:inline;
-    align-items:center;
+    display: inline;
+    align-items: center;
     font-weight: bold;
     color: white;
     background-color: #7f5539;
     border-radius: 30px;
     padding: 15px;
     margin-right: 30px;
-    justify-content:space-between;
+    justify-content: space-between;
     border: 2px solid transparent;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     border: 2px solid #e6ccb2;
 }
 
-.mascotas_container{
+/* Toggle button sits below the form */
+.toggle-form {
+    margin-top: 20px;
+}
+
+
+/* ─── Pets page ──────────────────────────────────────────── */
+
+/* Flex container that wraps all pet cards */
+.pets-container {
     background-color: #b08968;
     padding: 30px;
     border-radius: 12px;
     place-items: center;
-    width: 90%; 
+    width: 90%;
     box-sizing: border-box;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
     display: flex;
     gap: 20px;
     align-items: center;
+    justify-content: center;
     margin: 0 auto;
     color: #ffffff;
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
 
-.cat_container {
+/* Individual pet card: image + caption */
+.pet-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-weight: bold;
+    font-size: var(--font-size-base);
     background-color: #7f5539;
     border-radius: 30px;
-    padding: 15px;  
+    padding: 15px;
     justify-content: space-between;
     border: 2px solid transparent;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-.cat_container:hover {
+.pet-card:hover {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     border: 2px solid #e6ccb2;
 }
 
-.cat_container img {
+.pet-card img {
     border-radius: 15px;
-    width: 295px; 
+    width: 295px;
+    max-width: 100%;
+    height: auto;
 }
 
+
+/* ─── Responsive breakpoints ─────────────────────────────── */
+
+/* Mobile: stack nav and projects vertically */
 @media (max-width: 768px) {
-    .secciones {
+    .nav-links {
         flex-direction: column;
         gap: 10px;
     }
+
     .projects {
         grid-auto-flow: row;
         grid-template-columns: 1fr;
     }
-    .mascotas_container {
+
+    .pets-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Tablet: two-column projects, three-column pets */
 @media (min-width: 769px) and (max-width: 1024px) {
     .projects {
         grid-auto-flow: row;
         grid-template-columns: repeat(2, 1fr);
     }
-    .mascotas_container {
+
+    .pets-container {
         grid-template-columns: repeat(3, 1fr);
     }
-}
-
-.Mostrar{
-    margin-top: 20px;
 }

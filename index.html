@@ -3,69 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Portafolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Portfolio</title>
 </head>
 <body>
+
+    <!-- Site header: name and main navigation -->
     <header>
-        <div>   
-            <h1>¡Hola Soy Luis Guerrero!</h1>
+        <div>
+            <h1>Hi, I'm Luis Guerrero!</h1>
             <nav>
-                <ul class="secciones">
-                    <li class="activo"><a  href="index.html">Inicio</a></li>
-                    <li><a href="mascotas.html">Mascotas</a></li>
+                <ul class="nav-links">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="pets.html">Pets</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <section>
-        <div class="who_Im">
-            <img class="img-izquerda" src="img/izquerda.png" alt="Luis Photo Principal">
-            <div class="who_Im_text">
-                <h1>¿Quien Soy?</h1>
-                <p>Soy un joven programador de 22 años dando pasos para ser un desarrollador de software, con la intencion de borrar la barrera entre la imaginacion y el pensar volviendolo lo mas parecido a una realidad, aplicar nuevas tecnologias a ortodoxos sistemas, y darle un significado real a un entorno digital.</p>
+
+        <!-- About me: photos and bio -->
+        <div class="card-row">
+            <img class="img-left" src="img/index_left.png" alt="Luis main photo left">
+            <div class="card-row__text">
+                <h1>Who Am I?</h1>
+                <p>I'm a 22-year-old developer working toward becoming a software engineer. My goal is to erase the barrier between imagination and reality, apply new technologies to traditional systems, and give real meaning to a digital environment.</p>
             </div>
-            <img class="img-dereita" src="img/dereita.png" alt="Luis Photo Principal">
+            <img class="img-right" src="img/index_right.png" alt="Luis main photo right">
         </div>
-        <h2 class="text_mid">Conoce mis proyectos</h2>
-        <div class="who_Im">
+
+        <h2 class="section-title">Check Out My Projects</h2>
+
+        <!-- Project links pointing to GitHub branches -->
+        <div class="card-row">
             <ul class="projects">
-                <li><a class="github"href= "https://github.com/xclipsy/MyFirstDirectory/tree/Trivia-game" target="_blank">Trivia.py <img src="img/github.png" alt="Icono GitHub"></a> </li><br>
-                <li><a class="github"href= "https://github.com/xclipsy/MyFirstDirectory/tree/Inventory-system" target="_blank">Inventory-system.py<img src="img/github.png" alt="Icono GitHub"></a> </li><br>
-                <li><a class="github"href= "https://github.com/xclipsy/MyFirstDirectory/tree/Promedio-Estudiantes" target="_blank">average-grades-students.py<img src="img/github.png" alt="Icono GitHub"></a> </li><br>
-                <li><a class="github"href= "https://github.com/xclipsy/MyFirstDirectory/tree/flights-booking" target="_blank">flights-booking.py<img src="img/github.png" alt="Icono GitHub"></a> </li><br>
+                <li><a class="github-link" href="https://github.com/xclipsy/MyFirstDirectory/tree/Trivia-game" target="_blank">Trivia.py <img src="img/index_github.png" alt="GitHub icon"></a></li><br>
+                <li><a class="github-link" href="https://github.com/xclipsy/MyFirstDirectory/tree/Inventory-system" target="_blank">Inventory-system.py <img src="img/index_github.png" alt="GitHub icon"></a></li><br>
+                <li><a class="github-link" href="https://github.com/xclipsy/MyFirstDirectory/tree/Promedio-Estudiantes" target="_blank">average-grades-students.py <img src="img/index_github.png" alt="GitHub icon"></a></li><br>
+                <li><a class="github-link" href="https://github.com/xclipsy/MyFirstDirectory/tree/flights-booking" target="_blank">flights-booking.py <img src="img/index_github.png" alt="GitHub icon"></a></li><br>
             </ul>
         </div>
-        <h2 class="text_mid">Contactame</h2>
-        <div class ="who_Im">
-            <div class="contact_me">
-            <form class="forms">
-                <div class="container_form">
-                <label class="info">Nombre</label>
-                <input class= "textbox" type="text" name="nombre" placeholder="Ingresa tu nombre"><br>
-                </div>
-                <div class="container_form">
-                <label class="info">Telefono</label>
-                <input class= "textbox" type="number" name="telefono" placeholder="Ingresa tu numero" min="0"><br>
-                </div>
-                <div class="container_form">
-                <label class="info">Correo</label>
-                <input class= "textbox" type="email" name="correo" placeholder="Ingresa tu correo electronico"><br><br>
-                </div>
-                <div class="container_form">
-                <label>Acepto las politicas de tratados de seguridad previamente anunciados en <a class="acuerdo" href="https://static.avianca.com/media/1241/anexo-acuerdo-para-el-tratamiento-de-datos-personales-1.pdf">Acuerdo y tratado de datos</a></label>
-                <input type="checkbox" name="caja">
-                </div>
-                <br>
-                <br>
-                <button>Enviar Formulario</button>
-                <button type="reset">Limpiar datos</button>
-            </form>
-            <button class="Mostrar">Mostrar / Ocultar Formulario</button>
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <!-- Contact section: toggle button shows/hides the form -->
+        <div class="card-row">
+            <div class="contact-wrapper">
+
+                <!-- Contact form (hidden by default, toggled via script.js) -->
+                <form class="contact-form">
+                    <div class="form-field">
+                        <label class="field-label">Name</label>
+                        <input class="textbox" type="text" name="name" placeholder="Enter your name"><br>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Phone</label>
+                        <input class="textbox" type="number" name="phone" placeholder="Enter your phone number" min="0"><br>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Email</label>
+                        <input class="textbox" type="email" name="email" placeholder="Enter your email address"><br><br>
+                    </div>
+                    <div class="form-field">
+                        <label>I accept the data privacy policy stated in the
+                            <a class="policy-link" href="https://static.avianca.com/media/1241/anexo-acuerdo-para-el-tratamiento-de-datos-personales-1.pdf">Data Agreement</a>
+                        </label>
+                        <input type="checkbox" name="terms">
+                    </div>
+                    <br><br>
+                    <button>Submit Form</button>
+                    <button type="reset">Clear Fields</button>
+                </form>
+
+                <button class="toggle-form">Show / Hide Form</button>
             </div>
-            
         </div>
+
     </section>
-    <script src="script.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
